@@ -44,6 +44,47 @@
 	<link rel="stylesheet" href="assets/css/custom.css">
 </head>
 
+<script>
+
+function baselineCost(years)
+{
+	if (years == 1)
+	{
+		return 99;
+	}
+	else if (years == 2)
+	{
+		return 169;
+	}
+	else if (years == 4)
+	{
+		return 299;
+	}
+	else
+	{
+		alert('Invalid pricing.')
+		return -1;
+	}
+
+}
+
+function variableCost(locks) {
+	if (locks == 1) {return 100 * locks}
+	else if (locks == 2) {return 65 * locks}
+	else if (locks == 3) {return 57 * locks}
+	else if (locks == 4) {return 50 * locks}
+	else if (locks == 5) {return 46 * locks}
+	else return (Math.ceil(116,22 / (locks + 0.86) + 59,29)) * locks;
+}
+
+function totaleCost(years, locks)
+{
+	return baselineCost(years) + variableCost(locks);
+}
+
+</script>
+
+
 <body class="header-fixed header-fixed-space">
 	<div class="wrapper">
 		
@@ -92,8 +133,8 @@
 		<!-- Interactive Slider v2 -->
 		<div class="breadcrumbs-v3 img-v1" style="background: url('images/wallpaper-1.jpg') no-repeat;">
 			<div class="container text-center">
-				<h1>About us</h1>
-				<p>Unlock new opportunities hidden behind the doors of your business.</p>
+				<h1>Privacy Policy</h1>
+				<h2>(Italian Version)</h2>
 			</div>
 		</div>
 		<!-- End Interactive Slider v2 -->
@@ -103,33 +144,26 @@
 
 			<div class="bg-color-light">
 				<div class="container content-sm">
+
 					<div class="row">
-						<div class="col-md-6 md-margin-bottom-50">
-							<img class="img-responsive" src="images/hand-mockup-1.jpg" alt="">
-						</div>
-						<div class="col-md-6">
-							
-							<div class="headline-left margin-bottom-30">
-								<h2 class="headline-brd">Smartphone Based and Wire-Free <br> Access Control Platforms.</h2>
-								<p>People are ever more willing to use their smartphone to carry over everyday activities.  Access control is still based on pre-smartphone technologies. Keys, RFID and wire-based access control systems are the past. Sofia addresses these market needs by developing, integrating and commercialising distributed infrastructures for modern, mobile based and cost effective control access systems.
-								</p>
+						<div class="tag-box tag-box-v3 form-page">
+							<form class="sky-form">
+								<div class="headline"><h3>Privacy</h3></div>
 
-								<p>
-								Sofia SRL is a subsidiary of Bottega52 SRL, a company operating since 2014 in the Internet Of Things market. Turnover in 2016 will be ~300 k€. Sofia SRL is currently funded by <a href="http://www.tim.it">TIM (Telecom Italia Group)</a>, supported by <a href="http://www.cisco.com">Cisco</a> by means of the Cisco Spark Innovation Fund and by <a href="http://www.microsoft.it">Microsoft</a> with the BizSpark Plus fund. Finally,  ad deep industrial partnership is running with <a href="http://www.iseo.it">ISEO Serrature Spa</a>.
-								</p>
+								
+							<p align="center">
+							<iframe id="applform" src="https://www.iubenda.com/privacy-policy/7862317" width="100%" height="1500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+						</p>	
 
-								<p>
-								Sofia SRL aims at innovating the Access Control Systems market, leveraging the access to high profile partners and  the in-house technological competences.
-								</p>
-							</div>
-
-							
 						</div><!--/end row-->
 					</div>
 				</div>
 			</div>
 
-		<!-- End About Info -->
+
+
+		</div>
+		<!-- End About Info -->		
 
 
 		<div class="call-action-v1 bg-color-red">
@@ -264,7 +298,7 @@
 		<!--=== End Footer v6 ===-->
 	</div><!--/wrapper-->
 
-;
+
 
 	<!-- JS Global Compulsory -->
 	<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
