@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+<title>Sofia | Smartphone Based and Wire-free Access Control Platforms | Access Control, Payments and Push Notifications</title>
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<!-- Web Fonts -->
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+	<!-- CSS Global Compulsory -->
+	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- CSS Header and Footer -->
+	<link rel="stylesheet" href="assets/css/headers/header-v6.css">
+	<link rel="stylesheet" href="assets/css/footers/footer-v6.css">
+
+	<!-- CSS Implementing Plugins -->
+	<link rel="stylesheet" href="assets/plugins/animate.css">
+	<link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+	<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fancybox/source/jquery.fancybox.css">
+	<link rel="stylesheet" href="assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
+	<link rel="stylesheet" href="assets/plugins/master-slider/masterslider/style/masterslider.css">
+	<link rel='stylesheet' href="assets/plugins/master-slider/masterslider/skins/black-2/style.css">
+
+	<!-- CSS Pages Style -->
+	<link rel="stylesheet" href="assets/css/pages/page_one.css">
+
+	<!-- CSS Theme -->
+	<link rel="stylesheet" href="assets/css/theme-colors/default.css" id="style_color">
+	<link rel="stylesheet" href="assets/css/theme-skins/dark.css">
+
+	<!-- CSS Customization -->
+	<link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<script>
+
+function baselineCost(years)
+{
+	if (years == 1)
+	{
+		return 99;
+	}
+	else if (years == 2)
+	{
+		return 169;
+	}
+	else if (years == 4)
+	{
+		return 299;
+	}
+	else
+	{
+		alert('Invalid pricing.')
+		return -1;
+	}
+
+}
+
+function variableCost(locks) {
+	if (locks == 1) {return 100 * locks}
+	else if (locks == 2) {return 65 * locks}
+	else if (locks == 3) {return 57 * locks}
+	else if (locks == 4) {return 50 * locks}
+	else if (locks == 5) {return 46 * locks}
+	else return (Math.ceil(116,22 / (locks + 0.86) + 59,29)) * locks;
+}
+
+function totaleCost(years, locks)
+{
+	return baselineCost(years) + variableCost(locks);
+}
+
+</script>
+
+
+<body class="header-fixed header-fixed-space">
+	<div class="wrapper">
+		
+
+<!--=== Header v6 ===-->
+		<div class="header-v6 header-classic-white header-sticky">
+			<!-- Navbar -->
+			<div class="navbar mega-menu" role="navigation">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="menu-container">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+
+						<!-- Navbar Brand -->
+						<div class="navbar-brand">
+							<a href="index.html">
+								<img class="shrink-logo" src="images/sofia_logo_black_big.png" alt="Logo">
+							</a>
+						</div>
+						<!-- ENd Navbar Brand -->
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-responsive-collapse">
+						<div class="menu-container">
+							<ul class="nav navbar-nav">
+								<li><a href="why_sofia.html">Why Sofia</a></li>
+								<li><a href="how_it_works.html">How it works</a></li>
+								<li><a href="who_we_serve.html">Who we serve</a></li>
+								<li><a href="partners.html">Partner</a></li>
+								<li><a href="pricing.html">Pricing</a></li>
+							</ul>
+						</div>
+					</div><!--/navbar-collapse-->
+				</div>
+			</div>
+			<!-- End Navbar -->
+		</div>
+		<!--=== End Header v6 ===-->
+		
+		<!-- Interactive Slider v2 -->
+		<div class="breadcrumbs-v3 img-v1" style="background: url('images/wallpaper-1.jpg') no-repeat;">
+			<div class="container text-center">
+				<h1>Calculate Pricing</h1>
+				<p>An insight about our pricing</p>
+			</div>
+		</div>
+		<!-- End Interactive Slider v2 -->
+
+
+		<!-- About Info -->
+
+			<div class="bg-color-light">
+				<div class="container content-sm">
+
+					<div class="row">
+						<div class="tag-box tag-box-v3 form-page">
+							<form class="sky-form">
+								<div class="headline"><h3>Online quotation for Sofia As-A-Service (Cloud Based)</h3></div>
+								<p>Select the duration of the licence and the number of locks you want to connect.</p><br>
+
+								
+								<h3>License duration</h3>
+								<p>
+									<input type="radio" name="years" id="license_1" value="1" checked onchange="showValue();"> 1 Year License<br>
+									<input type="radio" name="years" id="license_2" value="2" onchange="showValue();"> 2 Years License<br>
+									<input type="radio" name="years" id="license_4" value="4" onchange="showValue();"> 4 Years License<br>
+								</p>
+
+								<br>
+								<h3>Plant size</h3>
+								<p>
+									Number of locks (<span id="locksnumber">0</span>)
+									<input style="width: 45%;" type="range" id="locks" min="1" max="50" value="1" step="1" onchange="showValue();" />
+								</p>
+								<br>
+
+								<h3>Total Price</h3>
+								<p>
+								<span id="pricerange">0</span> Euros<br>
+								</p>
+								
+								<br>
+								<br>
+
+
+								<hr style="width: 30%;"> 
+								<p>
+									<small>
+									VAT is not included.<br>
+									The price of the locks is not included.<br>
+									Prices valid until the end of March 2017.<br>
+									For larger plants, please contact our sales department. <a href="contacts.html">Click here</a><br>
+									If you are interested in having Sofia installed on your own servers, please contact our sales department. <a href="contacts.html">Click here</a><br>
+									If you are a third party integrator, please visit the Partner section. <a href="partners.html">Click here</a><br>
+									</small>
+								</p>
+							</form>
+						</div>
+
+
+						<script type="text/javascript">
+						function showValue()
+						{
+
+							locks = parseInt(document.getElementById("locks").value);
+
+							var years = 1;
+							if (document.getElementById("license_2").checked) years = 2;
+							if (document.getElementById("license_4").checked) years = 4;
+
+							var cost = totaleCost(years, locks)
+							document.getElementById("pricerange").innerHTML=cost;
+							document.getElementById("locksnumber").innerHTML=locks;
+						}
+
+						showValue(1);
+
+						</script>
+
+
+						</div><!--/end row-->
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+		<!-- End About Info -->		
+
+
+		<div class="call-action-v1 bg-color-red">
+			<div class="container">
+				<div class="call-action-v1-box">
+					<div class="call-action-v1-in">
+						<p class="color-light">Are you interested in having more information? Contact us.</p>
+					</div>
+					<div class="call-action-v1-in inner-btn page-scroll">
+						<a href="https://m.me/sofiasmartspace" target="_blank" class="btn-u btn-brd btn-brd-hover btn-u-light btn-u-block">Text us</a>
+						<a href="tel:+390240030890" class="btn-u btn-brd btn-brd-hover btn-u-light btn-u-block">Call us</a>
+						<a href="mailto:info@sofia-srl.it" class="btn-u btn-brd btn-brd-hover btn-u-light btn-u-block">E-mail us</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--=== Footer v6 ===-->
+		<div id="footer-v6" class="footer-v6">
+			<div class="footer">
+				<div class="container">
+					<div class="row">
+						<!-- About Us -->
+						<div class="col-md-3 sm-margin-bottom-40">
+							<div class="heading-footer"><h2>About Sofia</h2></div>
+							<p>Sofia is a software company that develops, integrates and commercializes modern, mobile based and cost effective control access platforms, providing also an integrated payment platform and a light-weighted CRM with push notifications.</p>
+							<br>
+							<p>
+								<a href="about_us.html" class="btn-u btn-brd btn-brd-hover btn-u-light btn-u-block">More info</a>
+							</p>
+						</div>
+						<!-- End About Us -->
+
+						<!-- Recent News -->
+						<div class="col-md-3 sm-margin-bottom-40">
+						
+							<div class="heading-footer"><h2>Product</h2></div>
+							<ul class="list-unstyled link-news">
+								<li><a href="why_sofia.html">Why Sofia</a></li>
+								<li><a href="how_it_works.html">How it works</a></li>
+								<li><a href="who_we_serve.html">Who we serve</a></li>
+								<li><a href="features.html">Features</a></li>
+								<li><a href="pricing.html">Pricing</a></li>
+								
+							</ul>
+						
+						</div>
+						<!-- End Recent News -->
+
+						<!-- Useful Links -->
+						<div class="col-md-3 sm-margin-bottom-40">
+							<div class="heading-footer"><h2>Company</h2></div>
+							<ul class="list-unstyled footer-link-list">
+								<li><a href="about_us.html">About Us</a></li>
+								<li><a href="partners.html">Partner</a></li>
+								<li><a href="contacts.html">Contacts</a></li>
+							</ul>
+						</div>
+						<!-- End Useful Links -->
+
+						<!-- Contacts -->
+						<div class="col-md-3">
+							<div class="heading-footer"><h2>Contacts</h2></div>
+							<ul class="list-unstyled contacts">
+								<li>
+									<i class="radius-3x fa fa-map-marker"></i>
+									TIM WCAP, Via Magolfa 8<br>
+									20143, Milano (MI) Italy
+									<br>
+									
+								</li>
+								<li>
+									<i class="radius-3x fa fa-map-marker"></i>
+									Piazza della Vittoria 47<br>
+									26900, Lodi (LO)
+									<br>
+									
+								</li>								
+								<li>
+									<i class="radius-3x fa fa-phone"></i>
+									<a href="tel:+39 02 4003 0890">+39 02 4003 0890</a><br>
+								</li>
+								<li>
+									<i class="radius-3x fa fa-globe"></i>
+									<a href="mailto:info@sofia-srl.it">info@sofia-srl.it</a><br>
+									<a href="http://www.sofia-srl.it">www.sofia-srl.it</a>
+								</li>
+							</ul>
+
+						</div>
+						<!-- End Contacts -->
+					</div>
+				</div><!--/container -->
+			</div>
+
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 sm-margon-bottom-10">
+							<ul class="list-inline terms-menu">
+								<li class="silver">Sofia SRL</li>
+								<li><a href="#">VAT: IT09129330966</a></li>
+								<li><a href="#">Copyright © 2017</a></li>
+								<li><a href="terms.html">Terms of Use</a></li>
+								<li><a href="privacy.html">Privacy</a></li>
+								<li><a href="contacts.html">Support</a></li>
+							</ul>
+						</div>
+						<div class="col-md-4">
+							<ul class="list-inline dark-social pull-right space-bottom-0">
+								<li>
+									<a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Facebook" href="https://www.facebook.com/sofiasmartspace/?ref=website">
+										<i class="fa fa-facebook"></i>
+									</a>
+								</li>
+								<li>
+									<a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="Twitter" href="https://twitter.com/sofiasmartspace">
+										<i class="fa fa-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a data-placement="top" data-toggle="tooltip" class="tooltips" data-original-title="LinkedIn" href="https://www.linkedin.com/company/sofia-s-r-l-">
+										<i class="fa fa-linkedin"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--=== End Footer v6 ===-->
+	</div><!--/wrapper-->
+
+
+
+	<!-- JS Global Compulsory -->
+	<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!-- JS Implementing Plugins -->
+	<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+	<script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
+	<script type="text/javascript" src="assets/plugins/jquery.parallax.js"></script>
+	<script src="assets/plugins/master-slider/masterslider/masterslider.min.js"></script>
+	<script src="assets/plugins/master-slider/masterslider/jquery.easing.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/counter/waypoints.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/counter/jquery.counterup.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
+	<script type="text/javascript" src="assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
+	<!-- JS Customization -->
+	<script type="text/javascript" src="assets/js/custom.js"></script>
+	<!-- JS Page Level -->
+	<script type="text/javascript" src="assets/js/app.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/fancy-box.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/owl-carousel.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/master-slider-fw.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
+
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			App.init();
+			App.initCounter();
+			App.initParallaxBg();
+			FancyBox.initFancybox();
+			MSfullWidth.initMSfullWidth();
+			OwlCarousel.initOwlCarousel();
+			StyleSwitcher.initStyleSwitcher();
+		});
+	</script>
+	<!--[if lt IE 9]>
+	<script src="assets/plugins/respond.js"></script>
+	<script src="assets/plugins/html5shiv.js"></script>
+	<script src="assets/plugins/placeholder-IE-fixes.js"></script>
+	<![endif]-->
+</body>
+</html>
