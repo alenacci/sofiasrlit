@@ -46,17 +46,17 @@
 
 <script>
 
-function baselineCost(years)
+function baselineCost(plan)
 {
-	if (years == 1)
+	if (plan == "standard")
 	{
 		return 99;
 	}
-	else if (years == 2)
+	else if (plan == "premium")
 	{
 		return 169;
 	}
-	else if (years == 4)
+	else if (plan == "executive")
 	{
 		return 299;
 	}
@@ -68,18 +68,50 @@ function baselineCost(years)
 
 }
 
-function variableCost(locks) {
-	if (locks == 1) {return 100 * locks}
+function variableCost(plan, locks) {
+
+	if (plan == "standard")
+	{
+		return 4.99 * locks;
+	}
+	else if (plan == "premium")
+	{
+		return 9.99 * locks;
+	}
+	else if (plan == "executive")
+	{
+		return 14.99 * locks;
+	}
+	else
+	{
+		alert('Invalid pricing.')
+		return -1;
+	}
+
+
+	/*if (locks == 1) {return 100 * locks}
 	else if (locks == 2) {return 65 * locks}
 	else if (locks == 3) {return 57 * locks}
 	else if (locks == 4) {return 50 * locks}
 	else if (locks == 5) {return 46 * locks}
-	else return (Math.ceil(116,22 / (locks + 0.86) + 59,29)) * locks;
+	else return (Math.ceil(116,22 / (locks + 0.86) + 59,29)) * locks;*/
 }
 
-function totaleCost(years, locks)
+function totaleCost(years, locks, plan)
 {
-	return baselineCost(years) + variableCost(locks);
+	var tot = Math.ceil(baselineCost(plan) + variableCost(plan, locks));
+
+	if (years == 2)
+	{
+		tot = Math.ceil(0.90 * tot);
+	}
+
+	if (years == 4)
+	{
+		tot = Math.ceil(0.85 * tot);
+	}
+
+	return tot;
 }
 
 </script>
@@ -149,15 +181,32 @@ function totaleCost(years, locks)
 					<div class="row">
 						<div class="tag-box tag-box-v3 form-page">
 							<form class="sky-form">
+								<div class="headline"><h3>Price Table for Sofia As-A-Service (Cloud Based)</h3></div>
+
+
+								<p align="center"><img src="images/JagoPricingFeb2017.jpg" width="70%"></p>
+
+								<br>
+
 								<div class="headline"><h3>Online quotation for Sofia As-A-Service (Cloud Based)</h3></div>
+
 								<p>Select the duration of the licence and the number of locks you want to connect.</p><br>
 
 								
-								<h3>License duration</h3>
+								<h3>Subscription Plan</h3>
+								<p>
+									<input type="radio" name="plan" id="plan_standard" value="standard" checked onchange="showValue();"> Standard<br>
+									<input type="radio" name="plan" id="plan_premium" value="premium" onchange="showValue();"> Premium<br>
+									<input type="radio" name="plan" id="plan_executive" value="executive" onchange="showValue();"> Executive<br>
+								</p>
+
+
+								<br>
+								<h3>Subscription duration</h3>
 								<p>
 									<input type="radio" name="years" id="license_1" value="1" checked onchange="showValue();"> 1 Year License<br>
-									<input type="radio" name="years" id="license_2" value="2" onchange="showValue();"> 2 Years License<br>
-									<input type="radio" name="years" id="license_4" value="4" onchange="showValue();"> 4 Years License<br>
+									<input type="radio" name="years" id="license_2" value="2" onchange="showValue();"> 2 Years License (10% discount)<br>
+									<input type="radio" name="years" id="license_4" value="4" onchange="showValue();"> 4 Years License (15% discount)<br>
 								</p>
 
 								<br>
@@ -170,7 +219,8 @@ function totaleCost(years, locks)
 
 								<h3>Total Price</h3>
 								<p>
-								<span id="pricerange">0</span> Euros<br>
+								Price per Year: <span id="pricerange">0</span> Euros<br>
+								Total price: <span id="pricerangeTot">0</span> Euros<br>
 								</p>
 								
 								<br>
@@ -202,8 +252,22 @@ function totaleCost(years, locks)
 							if (document.getElementById("license_2").checked) years = 2;
 							if (document.getElementById("license_4").checked) years = 4;
 
-							var cost = totaleCost(years, locks)
+							var plan = "standard"
+							if (document.getElementById("plan_premium").checked) plan = "premium";
+							if (document.getElementById("plan_executive").checked) years = "executive";
+
+							if (plan == "standard" && locks>30)
+							{
+								alert("Max 30 locks for the Standard plan.");
+								document.getElementById("locks").value = 30;
+								showValue();
+								return;
+							}
+
+							var cost = totaleCost(years, locks, plan)
+							var costTot = cost * years;
 							document.getElementById("pricerange").innerHTML=cost;
+							document.getElementById("pricerangeTot").innerHTML=costTot;
 							document.getElementById("locksnumber").innerHTML=locks;
 						}
 
